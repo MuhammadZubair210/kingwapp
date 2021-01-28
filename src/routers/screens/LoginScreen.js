@@ -11,8 +11,8 @@ import {firebase} from '../../config/firebaseConfig';
 const _firebase = firebase.default;
 export default class App extends React.Component {
   state = {
-    email: '',
-    password: '',
+    email: 'bbb@bbb.bbb',
+    password: '111111',
   };
 
   login = () => {

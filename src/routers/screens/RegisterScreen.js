@@ -15,10 +15,11 @@ const db = firebase.default.database();
 
 export default class App extends React.Component {
   state = {
-    email: 'aaajjjhuiujjudeislfalkdkfdadjjsjaadf@gmail.com',
-    password: '111111',
-    confirmpassword: '111111',
-    name: 'adf',
+    email: '',
+    password: '',
+    confirmpassword: '',
+    name: '',
+    phone: '',
   };
 
   signUp = () => {
@@ -30,6 +31,7 @@ export default class App extends React.Component {
           .set({
             name: this.state.name,
             email: this.state.email,
+            phone: this.state.phone,
           })
           .then(() => {
             this.props.navigation.goBack();
@@ -103,6 +105,16 @@ export default class App extends React.Component {
             onChangeText={(text) => this.setState({confirmpassword: text})}
           />
         </View>
+        <View style={styles.inputView}>
+          <TextInput
+            secureTextEntry
+            style={styles.inputText}
+            placeholder="phone no"
+            placeholderTextColor="white"
+            onChangeText={(text) => this.setState({phone: text})}
+          />
+        </View>
+
         <TouchableOpacity
           style={styles.loginBtn}
           onPress={() => {
